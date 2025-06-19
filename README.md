@@ -27,8 +27,25 @@ Los estados del sistema se gestionan mediante una **máquina de estados**:
 
 #### **Interacciones con el Usuario**:
 - **Pantalla LCD del BoosterPack MKII**: Muestra mensajes de estado y las opciones disponibles, como la solicitud de la fecha y hora, selección de usuario, y mensajes de error si el PIN es incorrecto.
-- **Joystick y Botones**: Permiten la navegación entre opciones y la selección del usuario. 🎮🔘
+- **Joystick y Botones**: Permiten la selección de opciones y la selección del usuario. 🎮🔘
 
 #### **Temporizadores e Interrupciones**:
 - **Interrupciones**: El sistema usa interrupciones para manejar la entrada de datos por puerto serie (para la fecha y el PIN) y la lectura del joystick mediante un ADC (Convertidor Analógico a Digital).
 - **Temporizador de 10 ms**: Gestiona el tiempo en los estados y las actualizaciones de la pantalla (por ejemplo, para mostrar la hora y realizar la gestión de estados).
+
+### **Funciones** 🛠️
+
+El sistema utiliza varias funciones clave para gestionar la interacción con los usuarios y los dispositivos periféricos:
+
+- **guarda_flash**: Escribe los datos de los usuarios y PINs en la memoria FLASH del MSP430.
+- **leer_ADC**: Lee los valores del joystick y otros controles analógicos utilizando el ADC.
+- **UART_SendString**: Envia cadenas de texto a través del puerto serie, utilizado para mostrar mensajes al usuario y obtener entradas.
+- **Set_Clk**: Configura la velocidad del reloj para el microcontrolador.
+- **inicia_ADC**: Inicializa el ADC para leer datos de los pines de entrada analógica.
+- **lee_ch**: Lee los valores analógicos de los canales del joystick y realiza la conversión a valores digitales.
+
+### 3. **Recursos** 💡
+
+Para llevar a cabo este proyecto se utilizaron los siguientes recursos:
+- **Memoria utilizada**: 15896 bytes 📦
+- **RAM utilizada**: 425 bytes 🧠
